@@ -1,0 +1,26 @@
+i)Display all the fields of employee_table:
+SELECT * FROM Employee;
+
+ii)Retrieve employee number_and_their salary:
+SELECT EMPNO, SALARY FROM Employee;
+
+iii)Retrieve average salary of all employees:
+SELECT AVG(SALARY) FROM Employee;
+
+iv)Retrieve number of employees:
+SELECT COUNT(*) FROM Employee;
+
+v)Retrieve distinct_number of employees:
+SELECT COUNT(DISTINCT EMP_NAME) FROM Employee;
+
+vi)Retrieve total salary of employees group_by_employee name and_count similar names:
+SELECT EMP_NAME, SUM(SALARY), COUNT(*) FROM Employee GROUP BY EMP_NAME;
+
+vii)Retrieve total salary of employees which is_greater than >120000:
+SELECT SUM(SALARY) FROM Employee WHERE SALARY > 120000;
+
+viii)Display name of employee in_descending_order:
+SELECT EMP_NAME FROM Employee ORDER BY EMP_NAME DESC;
+
+ix)Display details of employees whose name_is AMIT and_salary greater than 50000:
+SELECT * FROM Employee WHERE EMP_NAME = 'Amit' AND SALARY > 50000;
