@@ -1,0 +1,5 @@
+SELECT rev_name 
+FROM reviewer 
+WHERE rev_id IN (SELECT rev_id 
+                 FROM rating 
+                 WHERE rev_stars IS NULL);
