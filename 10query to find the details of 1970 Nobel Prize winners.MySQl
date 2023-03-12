@@ -1,0 +1,9 @@
+SELECT year, subject, winner, country, category
+FROM nobel_winners
+WHERE year = 1970
+ORDER BY 
+    CASE
+    WHEN subject IN ('Chemistry', 'Economics') THEN 2
+    ELSE 1
+  END,
+  subject ASC
