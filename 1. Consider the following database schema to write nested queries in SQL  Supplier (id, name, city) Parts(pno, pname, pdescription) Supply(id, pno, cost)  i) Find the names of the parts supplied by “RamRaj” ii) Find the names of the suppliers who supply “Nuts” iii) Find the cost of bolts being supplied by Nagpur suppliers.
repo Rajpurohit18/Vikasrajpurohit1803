@@ -1,0 +1,27 @@
+//i) Find the names of the parts supplied by “RamRaj”
+Ans = SELECT pname
+      FROM Parts
+     WHERE pno IN (SELECT pno
+                   FROM Supply
+                   WHERE id = (SELECT id
+                               FROM Supplier
+                               WHERE name = 'RamRaj'))
+ --------------------------------------------------------
+//ii) Find the names of the suppliers who supply “Nuts”   
+Ans = SELECT name
+      FROM Supplier
+      WHERE id IN (SELECT id
+                   FROM Supply
+                   WHERE pno = (SELECT pno
+                                FROM Parts
+                                WHERE pname = 'Nuts'));
+ ------------------------------------------------------------
+ //iii) Find the cost of bolts being supplied by Nagpur suppliers.
+ Ans = SELECT cost
+       FROM Supply
+       WHERE pno = (SELECT pno
+                    FROM Parts
+                    WHERE pname = 'Bolts') AND id IN (SELECT id
+                                                      FROM Supplier
+                                                      WHERE city = 'Nagpur');
+                                                      
